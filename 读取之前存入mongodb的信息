@@ -1,0 +1,11 @@
+from pymongo import MongoClient
+from pprint import pprint
+
+conn = MongoClient("localhost", 27017)
+db = conn.stu
+myset = db.pppinkmanhua
+
+for datas in myset.find():
+    pprint(datas)
+count = myset.find().count()
+print(count)
